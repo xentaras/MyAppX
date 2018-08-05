@@ -178,6 +178,15 @@ namespace MyApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Must have an account.
+        /// </summary>
+        internal static string MustSelectAccount {
+            get {
+                return ResourceManager.GetString("MustSelectAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string No {
@@ -187,11 +196,83 @@ namespace MyApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Age missing.
+        /// </summary>
+        internal static string NoAge {
+            get {
+                return ResourceManager.GetString("NoAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Income missing.
+        /// </summary>
+        internal static string NoIncome {
+            get {
+                return ResourceManager.GetString("NoIncome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You did not selected account..
+        /// </summary>
+        internal static string NoSelectedAccount {
+            get {
+                return ResourceManager.GetString("NoSelectedAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You did not selected any card..
+        /// </summary>
+        internal static string NoSelectedCards {
+            get {
+                return ResourceManager.GetString("NoSelectedCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you student?.
+        /// </summary>
+        internal static string NoStudent {
+            get {
+                return ResourceManager.GetString("NoStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not a student.
+        /// </summary>
+        internal static string NotStudent {
+            get {
+                return ResourceManager.GetString("NotStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account is {0}.
+        /// </summary>
+        internal static string SelectedAcount {
+            get {
+                return ResourceManager.GetString("SelectedAcount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You selected cards: {0}.
+        /// </summary>
+        internal static string SelectedCards {
+            get {
+                return ResourceManager.GetString("SelectedCards", resourceCulture);
             }
         }
         
@@ -210,6 +291,42 @@ namespace MyApp {
         internal static string StudentAccount {
             get {
                 return ResourceManager.GetString("StudentAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too old.
+        /// </summary>
+        internal static string TooOld {
+            get {
+                return ResourceManager.GetString("TooOld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too poor.
+        /// </summary>
+        internal static string TooPoor {
+            get {
+                return ResourceManager.GetString("TooPoor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too rich.
+        /// </summary>
+        internal static string TooRitch {
+            get {
+                return ResourceManager.GetString("TooRitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too young.
+        /// </summary>
+        internal static string TooYoung {
+            get {
+                return ResourceManager.GetString("TooYoung", resourceCulture);
             }
         }
         

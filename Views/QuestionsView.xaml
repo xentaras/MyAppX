@@ -6,30 +6,11 @@
              xmlns:local="clr-namespace:MyApp.Views"
              mc:Ignorable="d" 
              Background="LightGray"
-             d:DesignHeight="120" d:DesignWidth="300"
+             d:DesignHeight="150" 
+             d:DesignWidth="300"
              Width="300"
-             Height="120">
-    
-    <UserControl.Resources>
-        <Style TargetType="{x:Type Label}">
-            <Setter Property="FontFamily" Value="Calibri"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-        </Style>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontFamily" Value="Calibri"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Height" Value="20"></Setter>
-        </Style>
-        <Style TargetType="{x:Type RadioButton}">
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-        </Style>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Width" Value="100"></Setter>
-        </Style>
-    </UserControl.Resources>
-    
+             Height="150">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -43,23 +24,44 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Fill information:" />
+        <Label Grid.Row="0" 
+               Grid.Column="0" 
+               Content="Fill information:" />
         
-        <Label Grid.Row="1" Grid.Column="0" Content="Your age" />
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Age}" />
+        <Label Grid.Row="1" 
+               Grid.Column="0" 
+               Content="Your age" />
+        <TextBox Grid.Row="1" 
+                 Grid.Column="1" 
+                 Text="{Binding Age}" />
         
-        <Label Grid.Row="2" Grid.Column="0" Content="Are you a student?" />
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-            <RadioButton GroupName="Student" IsChecked="{Binding IsStudent}" />
+        <Label Grid.Row="2" 
+               Grid.Column="0" 
+               Content="Are you a student?" />
+        <StackPanel Grid.Row="2" 
+                    Grid.Column="1" 
+                    Orientation="Horizontal">
+            <RadioButton GroupName="Student" 
+                         IsChecked="{Binding IsStudent}" />
             <Label Content="Yes" />
-            <RadioButton GroupName="Student" IsChecked="{Binding NotStudent}" />
+            <RadioButton GroupName="Student" 
+                         IsChecked="{Binding NotStudent}" />
             <Label Content="No" />
         </StackPanel>
         
-        <Label Grid.Row="3" Grid.Column="0" Content="Your income" />
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Income}" />
+        <Label Grid.Row="3" 
+               Grid.Column="0" 
+               Content="Your income" />
+        <TextBox Grid.Row="3" 
+                 Grid.Column="1" 
+                 Text="{Binding Income}" />
 
-        <Button Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" Content="OK" Command="{Binding ConfirmCommand}" />
+        <Button Grid.Row="4" 
+                Grid.Column="2" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Content="OK" 
+                Command="{Binding ConfirmCommand}" />
 
     </Grid>
 </UserControl>

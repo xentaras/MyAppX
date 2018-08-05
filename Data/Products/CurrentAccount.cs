@@ -6,24 +6,36 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class CurrentAccount : IProduct
+    public class CurrentAccount : Product
     {
         public CurrentAccount()
         {
 
         }
 
-        public bool IsApplicable { private set; get; }
+        protected override string GetName() => Strings.CurrentAccount;
 
-        public string Name => Strings.CurrentAccount;
-
-        public bool IsSelected { get; set; }
-
-        public void CheckIfApplicable(Answers answers, IProduct[] accounts)
+        public override void CheckIfApplicable(Answers answers, IEnumerable<Product> accounts)
         {
             IsApplicable =
                 answers.Age != AgeEnum.Young &&
                 answers.Income != IncomeEnum.Zero;
+
+            if (IsApplicable != true)
+            {
+                var sb = new StringBuilder();
+
+                if (answers.Age == AgeEnum.Young)
+                    sb.AppendLine(Strings.TooYoung);
+                if (answers.Income == IncomeEnum.Zero)
+                    sb.AppendLine(Strings.TooPoor);
+
+                WhyNot = sb.ToString();
+            }
+            else
+            {
+                WhyNot = Name;
+            }
         }
     }
 }

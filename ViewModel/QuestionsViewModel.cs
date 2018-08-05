@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,8 +9,11 @@ using System.Windows.Input;
 
 namespace MyApp.ViewModel
 {
-    class QuestionsViewModel : ViewModelBase
+    public class QuestionsViewModel : ViewModelBase
     {
+        public Answers Answers { private set; get; }
+        public string ErrorString { private set; get; }
+
         public event EventHandler OnConfirmed;
 
         private int? m_Age;
@@ -40,8 +44,8 @@ namespace MyApp.ViewModel
             }
         }
 
-        private bool? m_NotStudent;
-        public bool? NotStudent
+        private bool m_NotStudent;
+        public bool NotStudent
         {
             get => m_NotStudent;
             set
@@ -54,8 +58,8 @@ namespace MyApp.ViewModel
             }
         }
 
-        private bool? m_IsStudent;
-        public bool? IsStudent
+        private bool m_IsStudent;
+        public bool IsStudent
         {
             get => m_IsStudent;
             set
@@ -80,14 +84,25 @@ namespace MyApp.ViewModel
 
         private void Confirm()
         {
-            if (Age != null && Income != null)
+            var errors = new List<string>();
+            if (!Age.HasValue)
+                errors.Add(Strings.NoAge);
+            if (!Income.HasValue)
+                errors.Add(Strings.NoIncome);
+            if (IsStudent == NotStudent)
+                errors.Add(Strings.NoStudent);
+
+            if(errors.Any())
             {
-                Confirmed();
+                ErrorString = string.Join(", ", errors);
+                Answers = null;
             }
             else
             {
-
+                ErrorString = string.Empty;
+                Answers = new Answers(Age.Value, IsStudent, Income.Value);               
             }
+            Confirmed();
         }
 
         private void Confirmed()

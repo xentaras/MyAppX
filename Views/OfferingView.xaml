@@ -4,9 +4,84 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyApp.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"  
+             Background="LightGray"
+             d:DesignHeight="150" 
+             d:DesignWidth="300"
+             Width="300"
+             Height="150">
+
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Content="Your offer:" />
+        
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Content="Account:" />
+        
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Content="Cards:" />
+        
+        <ItemsControl Grid.Row="2"
+                      Grid.Column="0"
+                      ItemsSource="{Binding Accounts}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid ToolTip="{Binding WhyNot}">
+                        <RadioButton GroupName="Account" 
+                                 Content="{Binding Name}" 
+                                 IsChecked="{Binding Path=IsSelected, Mode=TwoWay}" 
+                                 IsEnabled="{Binding Path=IsApplicable}">
+                        </RadioButton>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        
+        <ItemsControl x:Name="cardsList"
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      ItemsSource="{Binding CreditCards}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid ToolTip="{Binding WhyNot}">
+                        <CheckBox Content="{Binding Name}" 
+                                  IsChecked="{Binding IsSelected}" 
+                                  IsEnabled="{Binding IsApplicable}">
+                        </CheckBox>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+
+        <Button Grid.Row="3" 
+                Grid.Column="2" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom"
+                Content="OK" 
+                Command="{Binding ConfirmCommand}" />
+        
     </Grid>
 </UserControl>

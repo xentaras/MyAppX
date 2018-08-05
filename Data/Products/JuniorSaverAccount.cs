@@ -6,23 +6,29 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class JuniorSaverAccount : IProduct
+    public class JuniorSaverAccount : Product
     {
         public JuniorSaverAccount()
         {
 
         }
 
-        public bool IsApplicable { private set; get; }
+        protected override string GetName() => Strings.JuniorSaverAccount;
 
-        public string Name => Strings.JuniorSaverAccount;
-
-        public bool IsSelected { get; set; }
-
-        public void CheckIfApplicable(Answers answers, IProduct[] accounts)
+        public override void CheckIfApplicable(Answers answers, IEnumerable<Product> accounts)
         {
             IsApplicable =
                 answers.Age == AgeEnum.Young;
+
+            if (IsApplicable != true)
+            {
+                if (answers.Age != AgeEnum.Young)
+                    WhyNot = Strings.TooOld;
+            }
+            else
+            {
+                WhyNot = Name;
+            }
         }
     }
 }

@@ -1,23 +1,38 @@
-﻿namespace MyApp.Data
+﻿using System.Collections.Generic;
+using System.Text;
+
+namespace MyApp.Data
 {
-    public class StudentAccount : IProduct
+    public class StudentAccount : Product
     {
         public StudentAccount()
         {
 
         }
 
-        public bool IsApplicable { private set; get; }
+        protected override string GetName() => Strings.StudentAccount;
 
-        public string Name => Strings.StudentAccount;
-
-        public bool IsSelected { get; set; }
-
-        public void CheckIfApplicable(Answers answers, IProduct[] accounts)
+        public override void CheckIfApplicable(Answers answers, IEnumerable<Product> accounts)
         {
             IsApplicable =
                 answers.Age != AgeEnum.Young && 
                 answers.Student == StudentEnum.Student;
+
+            if (IsApplicable != true)
+            {
+                var sb = new StringBuilder();
+
+                if (answers.Age == AgeEnum.Young)
+                    sb.AppendLine(Strings.TooYoung);
+                if (answers.Student == StudentEnum.NotStudent)
+                    sb.AppendLine(Strings.NotStudent);
+
+                WhyNot = sb.ToString();
+            }
+            else
+            {
+                WhyNot = Name;
+            }
         }
     }
 }

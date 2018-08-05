@@ -156,17 +156,56 @@
   <data name="JuniorSaverAccount" xml:space="preserve">
     <value>Junior Saver Account</value>
   </data>
+  <data name="MustSelectAccount" xml:space="preserve">
+    <value>Must have an account</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="NoAge" xml:space="preserve">
+    <value>Age missing</value>
+  </data>
+  <data name="NoIncome" xml:space="preserve">
+    <value>Income missing</value>
+  </data>
+  <data name="NoSelectedAccount" xml:space="preserve">
+    <value>You did not selected account.</value>
+  </data>
+  <data name="NoSelectedCards" xml:space="preserve">
+    <value>You did not selected any card.</value>
+  </data>
+  <data name="NoStudent" xml:space="preserve">
+    <value>Are you student?</value>
+  </data>
+  <data name="NotStudent" xml:space="preserve">
+    <value>Not a student</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="SelectedAcount" xml:space="preserve">
+    <value>Your account is {0}</value>
+  </data>
+  <data name="SelectedCards" xml:space="preserve">
+    <value>You selected cards: {0}</value>
   </data>
   <data name="Student" xml:space="preserve">
     <value>Student</value>
   </data>
   <data name="StudentAccount" xml:space="preserve">
     <value>Student Account</value>
+  </data>
+  <data name="TooOld" xml:space="preserve">
+    <value>Too old</value>
+  </data>
+  <data name="TooPoor" xml:space="preserve">
+    <value>Too poor</value>
+  </data>
+  <data name="TooRitch" xml:space="preserve">
+    <value>Too rich</value>
+  </data>
+  <data name="TooYoung" xml:space="preserve">
+    <value>Too young</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

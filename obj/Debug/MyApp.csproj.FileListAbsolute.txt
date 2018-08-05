@@ -1,7 +1,6 @@
 C:\Users\Justas\source\repos\MyApp\MyApp\bin\Debug\MyApp.exe.config
 C:\Users\Justas\source\repos\MyApp\MyApp\bin\Debug\MyApp.exe
 C:\Users\Justas\source\repos\MyApp\MyApp\bin\Debug\MyApp.pdb
-C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\MyApp.csprojResolveAssemblyReference.cache
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\MainWindow.g.cs
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\App.g.cs
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\MyApp_MarkupCompile.cache
@@ -18,3 +17,4 @@ C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\Views\QuestionsView.g.cs
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\Views\QuestionsView.baml
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\Views\OfferingView.g.cs
 C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\Views\OfferingView.baml
+C:\Users\Justas\source\repos\MyApp\MyApp\obj\Debug\MyApp.csprojResolveAssemblyReference.cache

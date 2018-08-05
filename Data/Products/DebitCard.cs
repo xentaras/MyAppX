@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class DebitCard : IProduct 
+    public class DebitCard : Product 
     {
         public DebitCard()
         {
             
         }
 
-        public bool IsApplicable { private set; get; }
+        protected override string GetName() => Strings.DebitCard;
 
-        public string Name => Strings.DebitCard;
-
-        public bool IsSelected { get; set; }
-
-        public void CheckIfApplicable(Answers answers, IProduct[] accounts)
+        public override void CheckIfApplicable(Answers answers, IEnumerable<Product> accounts)
         {
             IsApplicable =
-                accounts.Where(i => i.GetType() != typeof(JuniorSaverAccount)).Any(i => i.IsSelected);
+                accounts.Where(i => i.GetType() != typeof(JuniorSaverAccount)).Any(i => i.IsSelected == true);
+
+            if (IsApplicable != true)
+                WhyNot = Strings.MustSelectAccount;
+            else
+                WhyNot = Name;
         }
     }
 }

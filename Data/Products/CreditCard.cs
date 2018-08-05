@@ -6,24 +6,36 @@ using System.Threading.Tasks;
 
 namespace MyApp.Data
 {
-    public class CreditCard : IProduct
+    public class CreditCard : Product
     {
         public CreditCard()
         {
             
         }
 
-        public bool IsApplicable { private set; get; }
+        protected override string GetName() => Strings.CreditCard;
 
-        public string Name => Strings.CreditCard;
-
-        public bool IsSelected { get; set; }
-
-        public void CheckIfApplicable(Answers answers, IProduct[] accounts)
+        public override void CheckIfApplicable(Answers answers, IEnumerable<Product> accounts)
         {
             IsApplicable = 
                 answers.Age != AgeEnum.Young && 
                 (answers.Income == IncomeEnum.Middle || answers.Income == IncomeEnum.Rich);
+
+            if (IsApplicable != true)
+            {
+                var sb = new StringBuilder();
+
+                if (answers.Age == AgeEnum.Young)
+                    sb.AppendLine(Strings.TooYoung);
+                if (answers.Income == IncomeEnum.Zero || answers.Income == IncomeEnum.Poor)
+                    sb.AppendLine(Strings.TooPoor);
+
+                WhyNot = sb.ToString();
+            }
+            else
+            {
+                WhyNot = Name;
+            }
         }
     }
 }

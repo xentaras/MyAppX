@@ -68,8 +68,7 @@
     <Compile Include="Data\IncomeEnum.cs" />
     <Compile Include="Data\Products\JuniorSaverAccount.cs" />
     <Compile Include="Data\Bundles\JuniorSaverBundle.cs" />
-    <Compile Include="Data\Offer.cs" />
-    <Compile Include="Data\Products\IProduct.cs" />
+    <Compile Include="Data\Products\Product.cs" />
     <Compile Include="Data\Products\StudentAccount.cs" />
     <Compile Include="Data\Bundles\StudentBundle.cs" />
     <Compile Include="Data\StudentEnum.cs" />
